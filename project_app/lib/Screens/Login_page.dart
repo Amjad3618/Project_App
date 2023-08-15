@@ -26,11 +26,7 @@ class _LoginpageState extends State<Loginpage> {
                   padding: const EdgeInsets.all(15.0),
                   child: CircleAvatar(
                     radius: 75,
-                    child: ClipOval(
-                      child: Image.network(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcMZrEaiKi2rWuFlmc-nBTVJLqBABmqzJR4Q&usqp=CAU',
-                      ),
-                    ),
+                    child: ClipOval(child: Image.asset('assets/splash.png')),
                   ),
                 ),
               ),
@@ -41,44 +37,50 @@ class _LoginpageState extends State<Loginpage> {
                   key: _formKey,
                   child: Column(
                     children: [
-                      TextFormField(
-                        cursorHeight: 30,
-                        controller: country,
-                        // validator: (val) {
-                        //   if (val!.isEmpty) {
-                        //     return "Please choose a country";
-                        //   } else if (val.length < 5) {
-                        //     return "country should be full name";
-                        //   }
-                        //   return null;
-                        // },
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.55,
+                        child: TextFormField(
+                          cursorHeight: 30,
+                          controller: country,
+                          // validator: (val) {
+                          //   if (val!.isEmpty) {
+                          //     return "Please choose a country";
+                          //   } else if (val.length < 5) {
+                          //     return "country should be full name";
+                          //   }
+                          //   return null;
+                          // },
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            hintText: 'Choose a country',
+                            labelText: 'Country',
                           ),
-                          hintText: 'Choose a country',
-                          labelText: 'Country',
                         ),
                       ),
                       const SizedBox(height: 20),
-                      TextFormField(
-                        keyboardType: TextInputType.number,
-                        cursorHeight: 30,
-                        controller: phone,
-                        // validator: (val) {
-                        //   if (val!.isEmpty) {
-                        //     return "Please enter your phone number";
-                        //   } else if (val.length < 11) {
-                        //     return "Number should be complete";
-                        //   }
-                        //   return null;
-                        // },
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.55,
+                        child: TextFormField(
+                          keyboardType: TextInputType.number,
+                          cursorHeight: 30,
+                          controller: phone,
+                          // validator: (val) {
+                          //   if (val!.isEmpty) {
+                          //     return "Please enter your phone number";
+                          //   } else if (val.length < 11) {
+                          //     return "Number should be complete";
+                          //   }
+                          //   return null;
+                          // },
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            hintText: 'Enter phone number',
+                            labelText: 'Phone',
                           ),
-                          hintText: 'Enter phone number',
-                          labelText: 'Phone',
                         ),
                       ),
                     ],

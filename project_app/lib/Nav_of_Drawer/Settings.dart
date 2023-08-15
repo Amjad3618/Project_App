@@ -1,4 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/Setting_Tiles_navigtion/Chat_folder.dart';
+
+import 'package:project_app/Setting_Tiles_navigtion/Date_and_time.dart';
+import 'package:project_app/Setting_Tiles_navigtion/Devices.dart';
+import 'package:project_app/Setting_Tiles_navigtion/Language.dart';
+import 'package:project_app/Setting_Tiles_navigtion/Notifications_Sounds.dart';
+import 'package:project_app/Setting_Tiles_navigtion/Privacy_security.dart';
+import 'package:project_app/Setting_Tiles_navigtion/chat_settings.dart';
+
+import '../Setting_Tiles_navigtion/PowerSaving.dart';
 
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);
@@ -13,19 +23,19 @@ class _SettingsState extends State<Settings> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.qr_code),
-          ),
-          Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                  onPressed: () {}, icon: const Icon(Icons.qr_code))),
+          const Padding(
             padding: EdgeInsets.all(8.0),
             child: Icon(Icons.search),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.more),
-          )
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                  onPressed: () {}, icon: const Icon(Icons.more_vert_outlined)))
         ],
       ),
       body: Padding(
@@ -34,33 +44,36 @@ class _SettingsState extends State<Settings> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Card(
+              Card(
                 elevation: 5,
                 child: ListTile(
-                  title: Text('Account'),
-                  subtitle: Text('+923231324627'),
-                  leading: Icon(Icons.person),
+                  onTap: () {},
+                  title: const Text('Account'),
+                  subtitle: const Text('+923231324627'),
+                  leading: const Icon(Icons.person),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
-              const Card(
+              Card(
                 elevation: 5,
                 child: ListTile(
-                  title: Text('None'),
-                  subtitle: Text('Usename'),
+                  onTap: () {},
+                  title: const Text('None'),
+                  subtitle: const Text('Usename'),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
-              const Card(
+              Card(
                 elevation: 5,
                 child: ListTile(
-                  title:
-                      Text('Mobile Application Developer - flutter Develope'),
-                  subtitle: Text('Bio'),
+                  onTap: () {},
+                  title: const Text(
+                      'Mobile Application Developer - flutter Develope'),
+                  subtitle: const Text('Bio'),
                 ),
               ),
               const SizedBox(
@@ -78,52 +91,101 @@ class _SettingsState extends State<Settings> {
                 'Settings',
                 style: TextStyle(color: Colors.blue),
               ),
-              const Card(
+              ///////////////////////////////////////////////////////////////////////
+              Card(
                 child: ListTile(
-                  title: Text('Chat settings'),
-                  leading: Icon(Icons.chat),
+                  title: const Text('Chat settings'),
+                  leading: const Icon(Icons.chat),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChatSetting()));
+                  },
                 ),
               ),
-              const Card(
+              Card(
                 child: ListTile(
-                  title: Text('Privacy and Security'),
-                  leading: Icon(Icons.lock),
+                  title: const Text('Privacy and Security'),
+                  leading: const Icon(Icons.lock),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PrivacySecurity()));
+                  },
                 ),
               ),
-              const Card(
+              Card(
                 child: ListTile(
-                  title: Text(' Notifictions and sounds'),
-                  leading: Icon(Icons.notification_add),
+                  title: const Text(' Notifictions and sounds'),
+                  leading: const Icon(Icons.notification_add),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Notifications()));
+                  },
                 ),
               ),
-              const Card(
+              Card(
                 child: ListTile(
-                  title: Text('Date and Time'),
-                  leading: Icon(Icons.date_range),
+                  title: const Text('Date and Time'),
+                  leading: const Icon(Icons.date_range),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DateAndTime()));
+                  },
                 ),
               ),
-              const Card(
+              Card(
                 child: ListTile(
-                  title: Text('Power Saving'),
-                  leading: Icon(Icons.battery_0_bar),
+                  title: const Text('Power Saving'),
+                  leading: const Icon(Icons.battery_0_bar),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PowerSaving()));
+                  },
                 ),
               ),
-              const Card(
+              Card(
                 child: ListTile(
-                  title: Text('Chat Folder'),
-                  leading: Icon(Icons.folder),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChatFolderTile()));
+                  },
+                  title: const Text('Chat Folder'),
+                  leading: const Icon(Icons.folder),
                 ),
               ),
-              const Card(
+              Card(
                 child: ListTile(
-                  title: Text('Devices'),
-                  leading: Icon(Icons.device_hub),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DeviceTile()));
+                  },
+                  title: const Text('Devices'),
+                  leading: const Icon(Icons.device_hub),
                 ),
               ),
-              const Card(
+              Card(
                 child: ListTile(
-                  title: Text('Language'),
-                  leading: Icon(Icons.language),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LanguageTile()));
+                  },
+                  title: const Text('Language'),
+                  leading: const Icon(Icons.language),
                 ),
               ),
               const SizedBox(

@@ -30,11 +30,10 @@ List<Chat> data = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTMDCcVCEkO6Jpof4p5MQdW_K4YQvI3E7DA&usqp=CAU',
   ),
   Chat(
-    title: 'Ahmed Ali',
-    subtitle: 'From village',
-    imageurl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_xybX6OYxUggOCeOnbqalehFtJgSN_mB4Jw&usqp=CAU',
-  ),
+      title: 'Ahmed Ali',
+      subtitle: 'From village',
+      imageurl:
+          'https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEZhY2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=700&q=60'),
   Chat(
     title: 'Save Massages',
     subtitle: 'you changed the chat them to ',

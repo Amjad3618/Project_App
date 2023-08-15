@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 
 import '../Classes/chatclass.dart';
 
-class Mainfloat extends StatelessWidget {
+class Mainfloat extends StatefulWidget {
   const Mainfloat({super.key});
 
+  @override
+  State<Mainfloat> createState() => _MainfloatState();
+}
+
+class _MainfloatState extends State<Mainfloat> {
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('New MessAges'),
+        title: const Text('New Messages'),
         elevation: 10,
       ),
       body: Column(
@@ -72,8 +78,57 @@ class Mainfloat extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.wifi_channel_sharp),
+        onPressed: () {
+          showModalBottomSheet(
+            isScrollControlled: true,
+            context: context,
+            builder: (context) {
+              return SizedBox(
+                height: 400,
+                width: double.infinity,
+                child: SingleChildScrollView(
+                  child: Form(
+                    key: formkey,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Column(
+                        children: [
+                          const Text('New contact'),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          TextFormField(
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                labelText: "First name (required)"),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          TextFormField(
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                labelText: "Last name (optional)"),
+                          ),
+                          ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text('Creat account'))
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
+        },
+        child: const Icon(Icons.group_add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
