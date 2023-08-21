@@ -6,20 +6,17 @@
     "configurations": [
         {
             "name": "project_app",
-            "cwd": "project_app",
             "request": "launch",
             "type": "dart"
         },
         {
             "name": "project_app (profile mode)",
-            "cwd": "project_app",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
             "name": "project_app (release mode)",
-            "cwd": "project_app",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
